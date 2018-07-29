@@ -1,0 +1,55 @@
+$grey1: hsla(220, 8%, 23%, 1)
+$grey2: hsla(223, 7%, 20%, 1)
+$url: "https://uploads.codesandbox.io/uploads/user/e322ab23-4bec-4ab4-8ce3-76ee8cfc2d6d/"
+$bg: $url+"s0qE-bg.png"
+
+@import 'reset'
+@import 'channels'
+@import 'chat'
+@import 'members'
+
+%colons 
+  width: 200px
+  background-color: $grey2
+  background-image: url($bg)
+  background-size: 600px
+
+.Pyuk 
+  width: 100vw
+  height: 100vh
+  display: flex
+  align-items: stretch
+  justify-content: flex-start
+  flex-flow: column nowrap
+
+  header
+    flex-shrink: 0
+    height: 50px
+    box-shadow: 0 1px 0 hsla(0, 0%, 0%, 0.2), 0 2px 0 hsla(0, 0%, 0%, 0.06)
+    background: $grey1
+    z-index: 1
+  
+  main
+    flex: 1
+    background: $grey1
+    display: flex
+    align-items: stretch
+    justify-content: flex-start
+    flex-flow: row nowrap
+
+    .pyuk-channels
+      @extend %colons
+      background-position: -115px 20px
+      flex-shrink: 0
+      display: flex
+      flex-direction: column
+    
+    .pyuk-chat
+      flex: 1
+      display: flex
+      flex-direction: column
+    
+    .pyuk-members
+      @extend %colons
+      background-position: 263px
+      flex-shrink: 0

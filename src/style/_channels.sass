@@ -1,0 +1,109 @@
+$url: 'https://uploads.codesandbox.io/uploads/user/e322ab23-4bec-4ab4-8ce3-76ee8cfc2d6d/'
+$fo-bg: #36393f
+$fo-bg-hover: #3b3e45
+$fo-color: hsla(0, 0%, 100%, 0.9)
+$icons: $url+'pA1k-icons.svg'
+$ico-color: #707070
+$user-bg: #292b31
+$ico-profile: $url+'3Dta-PA.svg'
+$ico-mp: $url+'FVaD-Notifs.svg'
+
+@mixin mask($prop)
+  -webkit-mask: $prop
+  mask: $prop
+
+@mixin mask-position($prop)
+  -webkit-mask-position: $prop
+  mask-position: $prop
+
+ul.fo-list
+  flex: 1
+
+li.fo 
+  margin: 1em
+  padding: .5em 0
+  background: $fo-bg
+  display: flex
+  align-items: center
+  align-content: center
+  justify-content: flex-start
+  cursor: pointer
+  
+  &:hover
+    background: $fo-bg-hover
+
+  .fo-icon
+    width: 20px
+    height: 20px
+    background: $ico-color 0 0 / 20px
+    margin-left: 6px
+    position: absolute
+    @include mask(url($icons) no-repeat)
+    &.fo-0 //communauté
+      @include mask-position(0 -100px)
+    &.fo-1 //activités
+      @include mask-position(0 0)
+    &.fo-2 //aventures
+      @include mask-position(0 -40px)
+    &.fo-3 //wi-fi
+      @include mask-position(0 -140px)
+    &.fo-4 //stratégie
+      @include mask-position(0 -60px)
+    &.fo-5 //shinyhunting
+      @include mask-position(0 -120px)
+    &.fo-6 //artistes
+      @include mask-position(0 -80px)
+    &.fo-7 //staff
+      @include mask-position(0 -20px)
+    
+  span.fo-name
+    margin-left: 34px
+    text-transform: uppercase
+    letter-spacing: .5px
+    color: $fo-color
+  
+.u-box
+  background: $user-bg
+  padding: 6px 1em
+  display: flex
+  align-items: center
+
+  .u-avatar
+    width: 40px
+    height: 40px
+    border-radius: 50%
+    background-size: cover
+    background-clip: padding-box
+    background-position: 50%
+    margin: 0 8px 0 0
+    flex: 0 0 40px
+  
+  .u-name
+    overflow: hidden
+    flex: 1
+    strong 
+      font-size: 1.4rem
+      font-weight: 500
+      max-width: 80px
+    
+  .u-tools
+    flex: 0 0 46px
+    display: flex
+    justify-content: space-between
+    padding-left: 6px
+  
+  %u-icons
+    width: 16px
+    height: 16px
+    background-position: 50%
+    background-size: contain
+    background-repeat: no-repeat
+    cursor: pointer
+  
+  .u-profile
+    @extend %u-icons
+    background-image: url($ico-profile)
+  
+  .u-mp
+    @extend %u-icons
+    background-image: url($ico-mp)

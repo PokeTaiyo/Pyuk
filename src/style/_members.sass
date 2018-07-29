@@ -1,0 +1,38 @@
+$h1-color: hsla(0, 0%, 100%, .7)
+$h1-bg: #292b31
+$user-bg: #36393f
+
+h1.online, h1.offline
+  margin: 1em 1em 0
+  padding: .5em 0
+  font-size: 1.2rem
+  color: $h1-color
+  font-weight: 400
+  background: $h1-bg
+  text-align: center
+  text-transform: uppercase
+
+li.mb-user
+  display: flex
+  align-items: center
+  margin: 0 1em
+  padding: 8px
+  cursor: pointer
+  background: $user-bg
+
+  .mb-avatar
+    width: 30px
+    height: 30px
+    border-radius: 50%
+    margin: 0 10px 0 0
+    background-size: cover
+    background-clip: padding-box
+    background-position: 50%
+
+  span strong
+    flex: 1
+    font-size: 1.4rem
+    font-weight: 500
+
+.mb-offline li .mb-avatar
+  filter: grayscale(0.8)

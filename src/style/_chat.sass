@@ -1,0 +1,115 @@
+$separator-color: hsla(0, 0%, 100%, 0.04)
+$user-color: #c0b283
+$date-color: hsla(0, 0%, 100%, 0.2)
+$text-color: hsla(0, 0%, 100%, 0.7)
+$input-bg: hsla(218, 5%, 47%, 0.3)
+$input-color: hsla(0, 0%, 100%, 0.7)
+
+.chat
+  flex: 1
+  overflow-x: hidden
+  overflow-y: scroll
+  margin: 0
+  
+  .chat-msg
+    margin: 0 6px 0 20px
+    padding: 20px 0
+    display: flex
+    user-select: text
+    word-wrap: break-word
+    border-bottom: 1px solid transparent
+    
+    &:not(:last-child)
+      border-color: $separator-color
+
+  .msg-avatar
+    width: 40px
+    height: 40px
+    border-radius: 50%
+    margin: -2px 20px 0 0
+    flex-shrink: 0
+    background-size: cover
+    background-clip: padding-box
+    background-position: 50%
+    cursor: pointer
+
+  .msg
+    flex: 1
+    margin: 0 20px 0 0
+
+    .msg-author strong
+      font-size: 1.7rem
+      font-weight: 500
+      cursor: pointer
+
+    .msg-date
+      color: $date-color
+      font-size: 1.3rem
+      font-weight: 400
+      margin: 0 0 0 6px
+    .msg-content
+      color: $text-color
+      line-height: 1.1em
+      font-size: 1.4rem
+      margin: 6px 0 0
+      word-wrap: break-word
+      font-weight: 400
+      letter-spacing: .2px
+      .emoji
+        vertical-align: text-bottom
+
+.chat-footer
+  height: 80px
+  flex-shrink: 0
+  display: flex
+  margin: 0 20px
+
+  .chat-tools
+    width: 100%
+    margin: 0 0 30px
+    padding: 20px 0 0
+    border-top: 1px solid $separator-color
+
+    .chat-input
+      position: relative
+      background: $input-bg
+      border-radius: 5px
+      display: flex
+
+      input
+        color: $input-color
+        background: transparent
+        border: none
+        margin: 2px 2px 2px 0
+        padding: 10px 38px 10px 10px
+        width: 100%
+        font-weight: 400
+
+      .input-emoji
+        background: transparent url(https://image.noelshack.com/fichiers/2018/30/1/1532339634-paf.png) no-repeat 50%
+        border: none
+        cursor: pointer
+        width: 40px
+        margin: 0 6px
+        filter: grayscale(0.7)
+
+        &:hover
+          filter: grayscale(0)
+
+// SCROLLBAR STYLE
+.chat::-webkit-scrollbar
+  width: 14px
+
+.chat::-webkit-scrollbar-thumb,
+.chat::-webkit-scrollbar-track-piece
+  background-clip: padding-box
+  background-color: #25272b
+  border: 3px solid #36393f
+  border-radius: 7px
+
+.chat::-webkit-scrollbar-track-piece,
+.chat::-webkit-scrollbar-track-piece
+  border-radius: 50px
+  background-color: #2f3136
+  border-color: #36393f
+  border: 3px solid #36393f

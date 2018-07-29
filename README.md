@@ -1,2 +1,0 @@
-# Pyuk
-Created with CodeSandbox
